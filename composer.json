@@ -1,0 +1,34 @@
+{
+  "name": "50bhan/laravel-exception-handler",
+  "description": "An Error Handler System For Laravel",
+  "keywords": ["laravel", "framework", "exceptions", "exception", "errors", "error", "whoops", "Exceptions", "Laravel Exceptions", "Laravel-Exceptions"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sobhan Sharifi",
+      "email": "sobhan.sharifi.sadeghi@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4"
+  },
+  "require-dev": {
+    "php-coveralls/php-coveralls": "^2.1",
+    "phpunit/phpunit": "^7.1|^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "50bhan\\LaravelExceptionHandler\\": "src/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit --coverage-text",
+    "test-coverage": "vendor/bin/php-coveralls -v"
+  },
+  "config": {
+    "sort-packages": true,
+    "discard-changes": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
