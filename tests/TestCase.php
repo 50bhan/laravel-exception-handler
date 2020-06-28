@@ -1,10 +1,18 @@
 <?php
 
-namespace Tests;
+namespace Sharifi\ExceptionHandler\Tests;
 
-use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Illuminate\Foundation\Application;
+use Orchestra\Testbench\TestCase as BaseTestCase;
+use Sharifi\ExceptionHandler\ServiceProvider;
 
-abstract class TestCase extends BaseTestCase
+class TestCase extends BaseTestCase
 {
-    use CreatesApplication;
+    /**
+     * @param Application $app
+     */
+    protected function getPackageProviders($app): array
+    {
+        return [ServiceProvider::class];
+    }
 }
