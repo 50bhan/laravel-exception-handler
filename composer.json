@@ -37,12 +37,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Sharifi\\ExceptionHandler\\": "src/"
+            "Sharifi\\Exceptions\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sharifi\\ExceptionHandler\\Tests\\": "tests/"
+            "Sharifi\\Exceptions\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -52,7 +52,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sharifi\\ExceptionHandler\\ServiceProvider"
+                "Sharifi\\Exceptions\\ServiceProvider"
             ]
         }
     },

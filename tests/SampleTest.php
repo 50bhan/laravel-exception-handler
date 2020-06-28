@@ -1,11 +1,11 @@
 <?php
 
-namespace Sharifi\ExceptionHandler\Tests;
+namespace Sharifi\Exceptions\Tests;
 
 class SampleTest extends TestCase
 {
     /** @test */
-    public function test_first_sample(): void
+    public function first_sample(): void
     {
         $this->assertTrue(true);
     }

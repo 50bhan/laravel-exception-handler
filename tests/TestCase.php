@@ -1,10 +1,10 @@
 <?php
 
-namespace Sharifi\ExceptionHandler\Tests;
+namespace Sharifi\Exceptions\Tests;
 
 use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Sharifi\ExceptionHandler\ServiceProvider;
+use Sharifi\Exceptions\ServiceProvider;
 
 class TestCase extends BaseTestCase
 {

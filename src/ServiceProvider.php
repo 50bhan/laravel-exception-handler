@@ -1,6 +1,6 @@
 <?php
 
-namespace Sharifi\ExceptionHandler;
+namespace Sharifi\Exceptions;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
