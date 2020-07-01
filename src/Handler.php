@@ -16,6 +16,20 @@ class Handler extends ExceptionHandler
         if ($e instanceof BaseException) {
             return $this->prepareCustomException($e, $request);
         }
+
+        $e = $this->prepareException($e);
+
+        if ($e instanceof HttpResponseException) {
+            return $e->getResponse();
+        } elseif ($e instanceof AuthenticationException) {
+            return $this->unauthenticated($request, $e);
+        } elseif ($e instanceof ValidationException) {
+            return $this->convertValidationExceptionToResponse($e, $request);
+        }
+
+        return $request->expectsJson()
+            ? $this->prepareJsonResponse($request, $e)
+            : $this->prepareResponse($request, $e);
     }
 
     private function prepareCustomException(BaseException $e, $request)
@@ -32,6 +46,7 @@ class Handler extends ExceptionHandler
         if (config('app.debug') && class_exists(Whoops::class)) {
             // 'IGNITION'
         }
+
         switch ($request->header('Accept')) {
             case 'application/json':
             case 'application/vnd.api+json':
